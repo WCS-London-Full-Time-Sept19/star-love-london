@@ -75,7 +75,6 @@ class Search extends React.Component {
             <option value="name">Name</option>
             <option value="height">Height</option>
             <option value="mass">Mass</option>
-            <option value="wiki">Wiki</option>
             <option value="eyeColor">Eye Color</option>
             <option value="gender">Gender</option>
             <option value="skinColor">Skin Color</option>
