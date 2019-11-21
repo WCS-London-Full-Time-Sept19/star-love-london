@@ -1,8 +1,10 @@
 /* Ana's CSS */
-/* .card {
-    width: 18rem;
-} */
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
 
+.btn
 .form {
   display: flex;
   justify-content: center;
