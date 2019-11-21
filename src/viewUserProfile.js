@@ -35,13 +35,21 @@ class UserProfile extends React.Component {
             Homeworld: {this.props.currentProfile.homeworld}
           </p>
         </div>
-        <button
-          onClick={() => this.props.setCurrentDisplay("search")}
-          type="button"
-          className="btn btn-light"
-        >
-          Search for Love
-        </button>
+        <div className="btn container">
+          <button className="btn btn-block btn-light">
+            <i className="fa fa-heart"></i>{" "}
+          </button>
+          <button
+            onClick={() => this.props.setCurrentDisplay("search")}
+            type="button"
+            className="btn btn-light"
+          >
+            Search for Love
+          </button>
+          <button className="btn btn-block btn-light">
+            <i className="fa fa-heart-broken"></i>{" "}
+          </button>
+        </div>
       </div>
     );
   }
