@@ -1,28 +1,28 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import Fuse from "fuse.js";
 import ListItem from "./ListItem";
-import Spinner from "./Spinner";
+// import Spinner from "./Spinner";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      // data: [],
       search: "",
       category: ""
     };
   }
 
-  componentDidMount() {
-    // fetch the data from the api
-    axios
-      .get("https://melroune.github.io/starwars-api/api//all.json")
-      .then(response => {
-        // set the result as state
-        this.setState({ data: response.data });
-      });
-  }
+  // componentDidMount() {
+  //   // fetch the data from the api
+  //   axios
+  //     .get("https://melroune.github.io/starwars-api/api//all.json")
+  //     .then(response => {
+  //       // set the result as state
+  //       this.setState({ data: response.data });
+  //     });
+  // }
 
   handleInputChange = e => {
     // get the value from input
@@ -45,20 +45,27 @@ class Search extends React.Component {
     // if there is no query or category
     if (category === "" || search === "") {
       // set the list to all the data
-      list = this.state.data;
+      list = this.props.data;
     } else {
       // else filter the list
       const options = {
         keys: [category]
       };
-      const fuse = new Fuse(this.state.data, options);
+      const fuse = new Fuse(this.props.data, options);
 
       list = fuse.search(this.state.search);
     }
 
     // map over the results to render
     return list.map((element, index) => {
-      return <ListItem key={index} {...element} />;
+      return (
+        <ListItem
+          key={index}
+          {...element}
+          setProfile={this.props.setCurrentProfile}
+          setDisplay={this.props.setCurrentDisplay}
+        />
+      );
     });
   };
 
@@ -90,9 +97,7 @@ class Search extends React.Component {
             onChange={this.handleInputChange}
           />
         </form>
-        <div>
-          {this.state.data.length === 0 ? <Spinner /> : this.renderList()}
-        </div>
+        <div>{this.renderList()}</div>
       </div>
     );
   }

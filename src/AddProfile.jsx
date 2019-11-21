@@ -5,7 +5,6 @@ class AddProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
       id: 0,
       name: "",
       height: 0,
@@ -55,18 +54,19 @@ class AddProfile extends React.Component {
   handleClickAdd = event => {
     event.preventDefault();
     var newProfile = this.addProfile();
-    this.setState({ data: this.state.data.push(newProfile) });
-    console.log(
-      "button clicked ",
-      newProfile,
-      this.state.data.push(newProfile)
-    );
+    this.setState({ newProfile });
+    // console.log(
+    //   "button clicked ",
+    //   newProfile,
+    //   this.state.data.push(newProfile)
+    // );
+    this.props.setCurrentProfile(this.state);
     this.props.setCurrentDisplay("viewProfile");
   };
 
-  componentDidUpdate() {
-    console.log(this.state.data);
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state.data);
+  // }
 
   render() {
     //console.log(this.state);

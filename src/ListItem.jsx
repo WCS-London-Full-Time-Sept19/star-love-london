@@ -1,33 +1,47 @@
 import React from "react";
 
-const ListItem = props => {
-  return (
-    <div className="card bg-warning text-light mb-3">
-      <div className="row no-gutters">
-        <div className="col-4">
-          <img src={props.image} className="card-img" alt={props.name} />
-        </div>
-        <div className="col-8">
-          <div className="card-body d-flex flex-direction-row justify-content-between">
-            <div className="">
-              <h5 className="card-title">{props.name}</h5>
-              <div className="card-text">
-                <small className="text-light">Species: {props.species}</small>
+class ListItem extends React.Component {
+  handleClick = () => {
+    this.props.setProfile(this.props);
+    this.props.setDisplay("viewProfile");
+  };
+  render() {
+    return (
+      <div className="card bg-warning text-light mb-3">
+        <div className="row no-gutters">
+          <div className="col-4">
+            <img
+              src={this.props.image}
+              className="card-img"
+              alt={this.props.name}
+            />
+          </div>
+          <div className="col-8">
+            <div className="card-body d-flex flex-direction-row justify-content-between">
+              <div className="">
+                <h5 className="card-title">{this.props.name}</h5>
+                <div className="card-text">
+                  <small className="text-light">
+                    Species: {this.props.species}
+                  </small>
+                </div>
+                <div className="card-text">
+                  <small className="text-light">
+                    Homeworld: {this.props.homeworld}
+                  </small>
+                </div>
               </div>
-              <div className="card-text">
-                <small className="text-light">
-                  Homeworld: {props.homeworld}
-                </small>
+              <div>
+                <button onClick={this.handleClick} className="btn btn-light">
+                  View
+                </button>
               </div>
-            </div>
-            <div>
-              <button className="btn btn-light">View</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default ListItem;

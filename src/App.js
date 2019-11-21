@@ -9,7 +9,12 @@ import "./App.css";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], currentDisplay: "loading", registered: false };
+    this.state = {
+      data: [],
+      currentDisplay: "loading",
+      registered: false,
+      currentProfile: {}
+    };
     // values for display: 'loading', 'register', 'search', 'viewProfile'
   }
 
@@ -33,18 +38,39 @@ class App extends React.Component {
     this.setState({ registered: true });
   };
 
+  setCurrentProfile = user => {
+    console.log("profile set");
+    this.setState({ currentProfile: user });
+  };
+
   renderInterface() {
     if (this.state.currentDisplay === "loading") {
       return <Welcome setCurrentDisplay={this.setCurrentDisplay} />;
     }
     if (this.state.currentDisplay === "register") {
-      return <AddProfile setCurrentDisplay={this.setCurrentDisplay} />;
+      return (
+        <AddProfile
+          setCurrentProfile={this.setCurrentProfile}
+          setCurrentDisplay={this.setCurrentDisplay}
+        />
+      );
     }
     if (this.state.currentDisplay === "search") {
-      return <Search setCurrentDisplay={this.setCurrentDisplay} />;
+      return (
+        <Search
+          data={this.state.data}
+          setCurrentProfile={this.setCurrentProfile}
+          setCurrentDisplay={this.setCurrentDisplay}
+        />
+      );
     }
     if (this.state.currentDisplay === "viewProfile") {
-      return <ViewUserProfile setCurrentDisplay={this.setCurrentDisplay} />;
+      return (
+        <ViewUserProfile
+          currentProfile={this.state.currentProfile}
+          setCurrentDisplay={this.setCurrentDisplay}
+        />
+      );
     }
   }
 
