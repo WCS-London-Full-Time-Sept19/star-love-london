@@ -4,8 +4,7 @@
   justify-content: center;
 }
 
-.btn
-.form {
+.btn .form {
   display: flex;
   justify-content: center;
   margin: 2rem 0;
@@ -28,8 +27,16 @@ button {
   display: flex;
   justify-content: center;
   background-color: black;
+  font-family: "Star Jedi";
 }
 
 .fa-heart {
   color: pink;
+}
+
+@font-face {
+  font-family: "Star Jedi";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./StarJedi.woff");
 }
