@@ -1,21 +1,30 @@
-/* Ana's CSS */
-@font-face {
-    font-family: "Star Jedi";
-    font-style: normal;
-    font-weight: 400;
-    src: url("./StarJedi.woff");
-  }
-
- 
-
 .btn-container {
+  width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 20px;
 }
 
-.card 
-{
-    font-family: "Star Jedi";
+.hide-element {
+  display: none;
+}
+
+.search {
+  width: 100%;
+}
+
+.heart {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.fa-heart-broken {
+  color: red;
 }
 
 .form {
@@ -25,7 +34,7 @@
 }
 
 .form span {
-  color: pink;
+  color: red;
 }
 
 .form-group {
@@ -33,8 +42,8 @@
   margin-left: 5%;
 }
 
-button {
-  margin: 2rem 40%;
+.submit {
+  width: 100%;
 }
 
 .headerTitle {
@@ -45,7 +54,7 @@ button {
 }
 
 .fa-heart {
-  color: pink;
+  color: red;
 }
 
 @font-face {
