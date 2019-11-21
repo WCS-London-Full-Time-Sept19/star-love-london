@@ -2,3 +2,18 @@
 .card {
     width: 18rem;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group {
+  width: 90%;
+  margin-left: 5%;
+}
+
+button {
+  margin: 2rem 40%;
+}
+
