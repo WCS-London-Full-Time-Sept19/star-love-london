@@ -5,10 +5,10 @@ class AddProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 0,
+      id: "",
       name: "",
-      height: 0,
-      mass: 0,
+      height: "",
+      mass: "",
       gender: "",
       homeworld: "",
       image: "",
@@ -72,7 +72,9 @@ class AddProfile extends React.Component {
     //console.log(this.state);
     return (
       <div>
-        <h1 className="form">Registration Form</h1>
+        <h1 className="form text-warning">
+          <span>[ </span> Sign Up <span> ]</span>
+        </h1>
         <form>
           <div className="form-group">
             <label htmlFor="nameField">Name</label>
@@ -193,13 +195,13 @@ class AddProfile extends React.Component {
               aria-describedby="speciesField"
               value={this.state.species}
               onChange={event => this.setState({ species: event.target.value })}
-              placeholder="Your skin colour"
+              placeholder="Your species"
               required
             />
           </div>
           <button
             type="submit"
-            className="btn btn-warning"
+            className="btn btn-warning font-weight-bold"
             onClick={this.handleClickAdd}
           >
             Submit!
