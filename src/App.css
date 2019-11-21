@@ -1,3 +1,8 @@
+/* Ana's CSS */
+.card {
+    width: 18rem;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -11,3 +16,4 @@
 button {
   margin: 2rem 40%;
 }
+
