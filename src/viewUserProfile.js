@@ -44,7 +44,7 @@ class UserProfile extends React.Component {
             type="button"
             className="btn btn-light"
           >
-            Search for Love
+            Search for Love (MAY THE FORCE BE WITH YOU)
           </button>
           <button className="btn btn-block btn-light">
             <i className="fa fa-heart-broken"></i>{" "}
