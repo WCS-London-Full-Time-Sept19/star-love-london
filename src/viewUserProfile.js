@@ -37,7 +37,11 @@ class UserProfile extends React.Component {
           <p className="card-text">Skin color: {char.skinColor}</p>
           <p className="card-text">Homeworld: {char.homeworld}</p>
         </div>
-        <button type="button" class="btn btn-warning">
+        <button
+          onClick={() => this.props.setCurrentDisplay("search")}
+          type="button"
+          className="btn btn-light"
+        >
           Search for Love
         </button>
       </div>

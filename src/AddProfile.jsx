@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
 class AddProfile extends React.Component {
   constructor(props) {
@@ -19,20 +19,20 @@ class AddProfile extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.fetchCharacter();
-  }
+  // componentDidMount() {
+  //this.fetchCharacter();
+  // }
 
-  fetchCharacter = () => {
-    axios
-      .get("https://melroune.github.io/starwars-api/api/all.json")
-      .then(response => {
-        //console.log(response);
-        this.setState({
-          data: response.data
-        });
-      });
-  };
+  // fetchCharacter = () => {
+  //   axios
+  //     .get("https://melroune.github.io/starwars-api/api/all.json")
+  //     .then(response => {
+  //       //console.log(response);
+  //       this.setState({
+  //         data: response.data
+  //       });
+  //     });
+  // };
 
   addProfile = () => {
     //create an obj based on the inputs
@@ -61,6 +61,7 @@ class AddProfile extends React.Component {
       newProfile,
       this.state.data.push(newProfile)
     );
+    this.props.setCurrentDisplay("viewProfile");
   };
 
   componentDidUpdate() {
