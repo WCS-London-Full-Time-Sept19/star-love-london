@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import Search from "./Search";
 import AddProfile from "./AddProfile";
-import ViewUserProfile from "./ViewUserProfile";
+import ViewUserProfile from "./viewUserProfile";
 import Welcome from "./Welcome";
+import Header from "./Header";
 import "./App.css";
 
 class App extends React.Component {
@@ -49,27 +50,36 @@ class App extends React.Component {
     }
     if (this.state.currentDisplay === "register") {
       return (
-        <AddProfile
-          setCurrentProfile={this.setCurrentProfile}
-          setCurrentDisplay={this.setCurrentDisplay}
-        />
+        <div>
+          <Header />
+          <AddProfile
+            setCurrentProfile={this.setCurrentProfile}
+            setCurrentDisplay={this.setCurrentDisplay}
+          />
+        </div>
       );
     }
     if (this.state.currentDisplay === "search") {
       return (
-        <Search
-          data={this.state.data}
-          setCurrentProfile={this.setCurrentProfile}
-          setCurrentDisplay={this.setCurrentDisplay}
-        />
+        <div>
+          <Header />
+          <Search
+            data={this.state.data}
+            setCurrentProfile={this.setCurrentProfile}
+            setCurrentDisplay={this.setCurrentDisplay}
+          />
+        </div>
       );
     }
     if (this.state.currentDisplay === "viewProfile") {
       return (
-        <ViewUserProfile
-          currentProfile={this.state.currentProfile}
-          setCurrentDisplay={this.setCurrentDisplay}
-        />
+        <div>
+          <Header />
+          <ViewUserProfile
+            currentProfile={this.state.currentProfile}
+            setCurrentDisplay={this.setCurrentDisplay}
+          />
+        </div>
       );
     }
   }
