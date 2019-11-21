@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Star Jedi";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./StarJedi.woff");
+}
+
+#welcome-heading {
+  font-family: "Star Jedi";
+}
+
+#background {
+  background-image: url("./Leia-and-C-3PO.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#buttonContainer {
+  width: 100%;
+}
+
+#welcomeButton {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}

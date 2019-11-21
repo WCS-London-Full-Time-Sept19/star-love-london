@@ -1,15 +1,14 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
 class AddProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      id: 0,
+      id: "",
       name: "",
-      height: 0,
-      mass: 0,
+      height: "",
+      mass: "",
       gender: "",
       homeworld: "",
       image: "",
@@ -19,20 +18,20 @@ class AddProfile extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.fetchCharacter();
-  }
+  // componentDidMount() {
+  //this.fetchCharacter();
+  // }
 
-  fetchCharacter = () => {
-    axios
-      .get("https://melroune.github.io/starwars-api/api/all.json")
-      .then(response => {
-        //console.log(response);
-        this.setState({
-          data: response.data
-        });
-      });
-  };
+  // fetchCharacter = () => {
+  //   axios
+  //     .get("https://melroune.github.io/starwars-api/api/all.json")
+  //     .then(response => {
+  //       //console.log(response);
+  //       this.setState({
+  //         data: response.data
+  //       });
+  //     });
+  // };
 
   addProfile = () => {
     //create an obj based on the inputs
@@ -55,23 +54,27 @@ class AddProfile extends React.Component {
   handleClickAdd = event => {
     event.preventDefault();
     var newProfile = this.addProfile();
-    this.setState({ data: this.state.data.push(newProfile) });
-    console.log(
-      "button clicked ",
-      newProfile,
-      this.state.data.push(newProfile)
-    );
+    this.setState({ newProfile });
+    // console.log(
+    //   "button clicked ",
+    //   newProfile,
+    //   this.state.data.push(newProfile)
+    // );
+    this.props.setCurrentProfile(this.state);
+    this.props.setCurrentDisplay("viewProfile");
   };
 
-  componentDidUpdate() {
-    console.log(this.state.data);
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state.data);
+  // }
 
   render() {
     //console.log(this.state);
     return (
       <div>
-        <h1 className="form">Registration Form</h1>
+        <h1 className="form text-warning">
+          <span>[ </span> Sign Up <span> ]</span>
+        </h1>
         <form>
           <div className="form-group">
             <label htmlFor="nameField">Name</label>
@@ -192,13 +195,13 @@ class AddProfile extends React.Component {
               aria-describedby="speciesField"
               value={this.state.species}
               onChange={event => this.setState({ species: event.target.value })}
-              placeholder="Your skin colour"
+              placeholder="Your species"
               required
             />
           </div>
           <button
             type="submit"
-            className="btn btn-warning"
+            className="btn btn-warning font-weight-bold"
             onClick={this.handleClickAdd}
           >
             Submit!

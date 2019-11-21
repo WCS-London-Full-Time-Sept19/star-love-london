@@ -1,6 +1,17 @@
-.form {
+/* Ana's CSS */
+.btn-container {
   display: flex;
   justify-content: center;
+}
+
+.btn .form {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.form span {
+  color: pink;
 }
 
 .form-group {
@@ -10,4 +21,22 @@
 
 button {
   margin: 2rem 40%;
+}
+
+.headerTitle {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  font-family: "Star Jedi";
+}
+
+.fa-heart {
+  color: pink;
+}
+
+@font-face {
+  font-family: "Star Jedi";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./StarJedi.woff");
 }
