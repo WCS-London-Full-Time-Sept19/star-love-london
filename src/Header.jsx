@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <div className="headerTitle text-warning">
         <h1>
-          StarLove<i className="fas fa-heart"></i>
+          Star Love <i className="fas fa-heart"></i>
         </h1>
       </div>
     </header>

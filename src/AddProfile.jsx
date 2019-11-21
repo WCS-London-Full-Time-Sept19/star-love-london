@@ -199,9 +199,9 @@ class AddProfile extends React.Component {
               required
             />
           </div>
-          <button
+          <button 
             type="submit"
-            className="btn btn-warning font-weight-bold"
+            className="btn btn-warning font-weight-bold submit"
             onClick={this.handleClickAdd}
           >
             Submit!
