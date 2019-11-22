@@ -42,29 +42,39 @@ class UserProfile extends React.Component {
             </button>
           </div>
 
-          <h5 className="card-title">Name: {this.props.currentProfile.name}</h5>
+          <h5 className="card-title text-dark">
+            Name: {this.props.currentProfile.name}
+          </h5>
 
-          <p className="card-text">
-            Height: {this.props.currentProfile.height}
+          <p className="card-text text-dark">
+            <span className="jedi">Height</span>:{" "}
+            {this.props.currentProfile.height}
           </p>
-          <p className="card-text">Mass: {this.props.currentProfile.mass}</p>
-          <p className="card-text">
-            Gender: {this.props.currentProfile.gender}
+          <p className="card-text text-dark">
+            <span className="jedi">Mass</span>: {this.props.currentProfile.mass}
           </p>
-          <p className="card-text">
-            Eye color: {this.props.currentProfile.eyeColor}
+          <p className="card-text text-dark">
+            <span className="jedi">Gender</span>:{" "}
+            {this.props.currentProfile.gender}
           </p>
-          <p className="card-text">
-            Species: {this.props.currentProfile.species}
+          <p className="card-text text-dark">
+            <span className="jedi">Eye color</span>:{" "}
+            {this.props.currentProfile.eyeColor}
           </p>
-          <p className="card-text">
-            Skin color: {this.props.currentProfile.skinColor}
+          <p className="card-text text-dark">
+            <span className="jedi">Species</span>:{" "}
+            {this.props.currentProfile.species}
           </p>
-          <p className="card-text">
-            Homeworld: {this.props.currentProfile.homeworld}
+          <p className="card-text text-dark">
+            <span className="jedi">Skin color</span>:{" "}
+            {this.props.currentProfile.skinColor}
+          </p>
+          <p className="card-text text-dark">
+            <span className="jedi">Homeworld</span>:{" "}
+            {this.props.currentProfile.homeworld}
           </p>
         </div>
-        <div className="btn-container">
+        <div className="btn-container wideButtonContainer">
           <button
             onClick={() => this.props.setCurrentDisplay("search")}
             type="button"

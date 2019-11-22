@@ -11,11 +11,10 @@ const Welcome = props => {
         <h1 id="welcome-heading" className="d-1 text-warning text-center">
           Star Love <span className="fas fa-heart"></span>
         </h1>
-        <div id="buttonContainer">
+        <div className="wideButtonContainer">
           <button
-            id="welcomeButton"
             onClick={() => props.setCurrentDisplay("register")}
-            className="btn btn-warning text-light"
+            className="btn btn-warning font-weight-bold  wide-btn text-dark"
           >
             Register
           </button>

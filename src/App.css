@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Star Jedi";
   font-style: normal;
@@ -36,8 +35,6 @@
 .fa-heart-broken {
   color: red;
 }
-
-
 
 .form {
   display: flex;
@@ -77,5 +74,23 @@
 }
 
 h5 {
+  font-family: "Star Jedi";
+}
+
+label {
+  font-family: "Star Jedi";
+}
+
+.wideButtonContainer {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.wide-btn {
+  width: 100%;
+}
+
+span.jedi {
   font-family: "Star Jedi";
 }
