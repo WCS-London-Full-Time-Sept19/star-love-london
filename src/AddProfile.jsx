@@ -5,15 +5,15 @@ class AddProfile extends React.Component {
     super(props);
     this.state = {
       id: "",
-      name: "",
-      height: "",
-      mass: "",
-      gender: "",
-      homeworld: "",
+      name: "Robot Jedi",
+      height: "80",
+      mass: "45",
+      gender: "robot",
+      homeworld: "tatooine",
       image: "https://source.unsplash.com/FTfjMijq-Ws",
-      eyeColor: "",
-      skinColor: "",
-      species: "",
+      eyeColor: "black",
+      skinColor: "green",
+      species: "robot",
       currentUser: true
     };
   }
