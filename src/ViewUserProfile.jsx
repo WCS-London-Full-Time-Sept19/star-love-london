@@ -2,7 +2,19 @@ import React from "react";
 import "./App.css";
 
 class UserProfile extends React.Component {
-  state = { data: "" };
+  state = {
+    data: "",
+    brokenHeartClass: "btn btn-light heart-broken",
+    fullHeartClass: "btn btn-light heart"
+  };
+
+  hideFullHeart = () => {
+    this.setState({ fullHeartClass: "hide-element" });
+  };
+
+  hideBrokenHeart = () => {
+    this.setState({ brokenHeartClass: "hide-element" });
+  };
 
   render() {
     //console.log(this.props.currentProfile.name);
@@ -14,7 +26,24 @@ class UserProfile extends React.Component {
           alt={this.props.currentProfile.name}
         />
         <div className="card-body">
+          <div className="btn-container">
+            <button
+              className={this.state.fullHeartClass}
+              onClick={() => this.hideBrokenHeart()}
+            >
+              <i className="fas fa-heart"></i>{" "}
+            </button>
+
+            <button
+              className={this.state.brokenHeartClass}
+              onClick={() => this.hideFullHeart()}
+            >
+              <i className="fas fa-heart-broken"></i>{" "}
+            </button>
+          </div>
+
           <h5 className="card-title">Name: {this.props.currentProfile.name}</h5>
+
           <p className="card-text">
             Height: {this.props.currentProfile.height}
           </p>
@@ -35,19 +64,13 @@ class UserProfile extends React.Component {
             Homeworld: {this.props.currentProfile.homeworld}
           </p>
         </div>
-        <div className="btn container">
-          <button className="btn btn-block btn-light">
-            <i className="fa fa-heart"></i>{" "}
-          </button>
+        <div className="btn-container">
           <button
             onClick={() => this.props.setCurrentDisplay("search")}
             type="button"
-            className="btn btn-light"
+            className="btn btn-light search"
           >
             Search for Love
-          </button>
-          <button className="btn btn-block btn-light">
-            <i className="fa fa-heart-broken"></i>{" "}
           </button>
         </div>
       </div>

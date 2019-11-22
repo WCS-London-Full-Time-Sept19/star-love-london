@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Search from "./Search";
 import AddProfile from "./AddProfile";
-import ViewUserProfile from "./viewUserProfile";
+import ViewUserProfile from "./ViewUserProfile";
 import Welcome from "./Welcome";
 import Header from "./Header";
 import "./App.css";
