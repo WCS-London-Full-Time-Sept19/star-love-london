@@ -17,7 +17,6 @@ class UserProfile extends React.Component {
   };
 
   render() {
-    //console.log(this.props.currentProfile.name);
     return (
       <div className="card bg-warning text-light">
         <img
@@ -26,21 +25,23 @@ class UserProfile extends React.Component {
           alt={this.props.currentProfile.name}
         />
         <div className="card-body">
-          <div className="btn-container">
-            <button
-              className={this.state.fullHeartClass}
-              onClick={() => this.hideBrokenHeart()}
-            >
-              <i className="fas fa-heart"></i>{" "}
-            </button>
+          {!this.props.currentProfile.currentUser && (
+            <div className="btn-container">
+              <button
+                className={this.state.fullHeartClass}
+                onClick={() => this.hideBrokenHeart()}
+              >
+                <i className="fas fa-heart"></i>{" "}
+              </button>
 
-            <button
-              className={this.state.brokenHeartClass}
-              onClick={() => this.hideFullHeart()}
-            >
-              <i className="fas fa-heart-broken"></i>{" "}
-            </button>
-          </div>
+              <button
+                className={this.state.brokenHeartClass}
+                onClick={() => this.hideFullHeart()}
+              >
+                <i className="fas fa-heart-broken"></i>{" "}
+              </button>
+            </div>
+          )}
 
           <h5 className="card-title text-dark">
             Name: {this.props.currentProfile.name}
