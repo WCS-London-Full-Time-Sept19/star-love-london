@@ -31,14 +31,14 @@ class UserProfile extends React.Component {
               className={this.state.fullHeartClass}
               onClick={() => this.hideBrokenHeart()}
             >
-              <i className="fa fa-heart"></i>{" "}
+              <i className="fas fa-heart"></i>{" "}
             </button>
 
             <button
               className={this.state.brokenHeartClass}
               onClick={() => this.hideFullHeart()}
             >
-              <i className="fa fa-heart-broken"></i>{" "}
+              <i className="fas fa-heart-broken"></i>{" "}
             </button>
           </div>
 
