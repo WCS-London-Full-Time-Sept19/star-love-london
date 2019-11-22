@@ -14,7 +14,8 @@ class AddProfile extends React.Component {
       image: "",
       eyeColor: "",
       skinColor: "",
-      species: ""
+      species: "",
+      currentUser: true
     };
   }
 
@@ -200,6 +201,7 @@ class AddProfile extends React.Component {
               required
             />
           </div>
+          <input name="currentUser" value="true" hidden />
           <div className="wideButtonContainer">
             <button
               type="submit"
