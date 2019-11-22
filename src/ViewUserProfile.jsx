@@ -17,7 +17,6 @@ class UserProfile extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="card bg-warning text-light">
         <img
