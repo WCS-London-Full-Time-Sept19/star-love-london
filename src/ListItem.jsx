@@ -7,7 +7,7 @@ class ListItem extends React.Component {
   };
   render() {
     return (
-      <div className="card bg-warning text-light mb-3">
+      <div onClick={this.handleClick} className="card bg-warning mb-3">
         <div className="row no-gutters">
           <div className="col-4">
             <img
@@ -17,24 +17,17 @@ class ListItem extends React.Component {
             />
           </div>
           <div className="col-8">
-            <div className="card-body d-flex flex-direction-row justify-content-between">
-              <div className="">
-                <h5 className="card-title">{this.props.name}</h5>
-                <div className="card-text">
-                  <small className="text-light">
-                    Species: {this.props.species}
-                  </small>
-                </div>
-                <div className="card-text">
-                  <small className="text-light">
-                    Homeworld: {this.props.homeworld}
-                  </small>
-                </div>
+            <div className="card-body">
+              <h5 className="card-title  text-dark">{this.props.name}</h5>
+              <div className="card-text">
+                <small className="text-muted">
+                  Species: {this.props.species}
+                </small>
               </div>
-              <div>
-                <button onClick={this.handleClick} className="btn btn-light">
-                  View
-                </button>
+              <div className="card-text">
+                <small className="text-muted">
+                  Homeworld: {this.props.homeworld}
+                </small>
               </div>
             </div>
           </div>

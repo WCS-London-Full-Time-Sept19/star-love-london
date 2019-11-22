@@ -62,6 +62,7 @@ class AddProfile extends React.Component {
     // );
     this.props.setCurrentProfile(this.state);
     this.props.setCurrentDisplay("viewProfile");
+    this.props.setRegistration(true);
   };
 
   // componentDidUpdate() {
