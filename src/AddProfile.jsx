@@ -11,7 +11,7 @@ class AddProfile extends React.Component {
       mass: "",
       gender: "",
       homeworld: "",
-      image: "",
+      image: "https://source.unsplash.com/FTfjMijq-Ws",
       eyeColor: "",
       skinColor: "",
       species: "",
@@ -64,6 +64,7 @@ class AddProfile extends React.Component {
     this.props.setCurrentProfile(this.state);
     this.props.setCurrentDisplay("viewProfile");
     this.props.setRegistration(true);
+    this.props.addNewUserToTheList(this.state);
   };
 
   // componentDidUpdate() {
@@ -201,7 +202,6 @@ class AddProfile extends React.Component {
               required
             />
           </div>
-          <input name="currentUser" value="true" hidden />
           <div className="wideButtonContainer">
             <button
               type="submit"

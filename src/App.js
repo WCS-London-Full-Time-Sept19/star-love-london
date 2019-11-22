@@ -37,6 +37,10 @@ class App extends React.Component {
       });
   }
 
+  addNewUserToTheList = user => {
+    this.state.data.push(user);
+  };
+
   setCurrentDisplay = display => {
     this.setState({
       currentDisplay: display
@@ -64,6 +68,7 @@ class App extends React.Component {
             setCurrentProfile={this.setCurrentProfile}
             setCurrentDisplay={this.setCurrentDisplay}
             setRegistration={this.setRegistration}
+            addNewUserToTheList={this.addNewUserToTheList}
           />
         </div>
       );
