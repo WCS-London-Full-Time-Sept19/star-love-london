@@ -19,7 +19,15 @@ class App extends React.Component {
     // values for display: 'loading', 'register', 'search', 'viewProfile'
   }
 
+  //TODO: if the user is registered, do not show the welcome screen, show the list
+
   componentDidMount() {
+    //TODO:  check if there is data in localstorage
+
+    // if there is, put it in the state
+
+    // if there isn't, call the api and put it in the state, then in localstorage
+
     // fetch the data from the api
     axios
       .get("https://melroune.github.io/starwars-api/api//all.json")
@@ -35,12 +43,12 @@ class App extends React.Component {
     });
   };
 
-  setRegistration = () => {
-    this.setState({ registered: true });
+  setRegistration = val => {
+    this.setState({ registered: val });
   };
 
   setCurrentProfile = user => {
-    console.log("profile set");
+    // console.log("profile set");
     this.setState({ currentProfile: user });
   };
 
@@ -55,6 +63,7 @@ class App extends React.Component {
           <AddProfile
             setCurrentProfile={this.setCurrentProfile}
             setCurrentDisplay={this.setCurrentDisplay}
+            setRegistration={this.setRegistration}
           />
         </div>
       );
@@ -85,7 +94,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentDisplay);
+    // console.log(this.state.currentDisplay);
     return <div className="App">{this.renderInterface()}</div>;
   }
 }
