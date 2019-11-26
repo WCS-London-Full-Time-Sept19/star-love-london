@@ -28,18 +28,6 @@ class Pagination extends React.Component {
       btnArray.push({ pageText: "<", command: -1 });
     }
 
-    //let maxPages = buttonsBeforeAfter * 2 + 1;
-
-    console.log(
-      "padding before current page ",
-      currentPage - buttonsBeforeAfter
-    );
-    console.log(
-      "padding after current page ",
-      currentPage + buttonsBeforeAfter
-    );
-    //console.log("max num of pages ", maxPages);
-
     let i = 0;
     if (currentPage - buttonsBeforeAfter < 1) {
       i = 0;

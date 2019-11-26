@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
-import Search from "./Search";
+//import Search from "./Search";
 import AddProfile from "./AddProfile";
 import ViewUserProfile from "./ViewUserProfile";
 import Welcome from "./Welcome";
 import Header from "./Header";
 import "./App.css";
 import Pagination from "./Pagination";
+import ListItem from "./ListItem";
 
 class App extends React.Component {
   constructor(props) {
@@ -75,19 +76,27 @@ class App extends React.Component {
         <div>
           <Header />
           <Pagination
-            totalRecords={88}
+            totalRecords={87}
             recordsPerPage={10}
             buttonsBeforeAfter={2}
             handleClick={this.handleClick}
             currentPage={this.state.currentPage}
           />
-          <Search
+          {this.state.data
+            .slice(
+              (this.state.currentPage - 1) * 10,
+              this.state.currentPage * 10 + 10
+            )
+            .map((i, index) => {
+              return <ListItem key={index} {...i} />;
+            })}
+          {/* <Search
             data={this.state.data}
             setCurrentProfile={this.setCurrentProfile}
             setCurrentDisplay={this.setCurrentDisplay}
             currentPage={this.state.currentPage}
             recordsPerPage={10}
-          />
+          /> */}
         </div>
       );
     }
