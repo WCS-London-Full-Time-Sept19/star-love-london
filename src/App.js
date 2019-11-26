@@ -6,15 +6,17 @@ import ViewUserProfile from "./ViewUserProfile";
 import Welcome from "./Welcome";
 import Header from "./Header";
 import "./App.css";
+import Pagination from "./Pagination";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      currentDisplay: "loading",
+      currentDisplay: "search",
       registered: false,
-      currentProfile: {}
+      currentProfile: {},
+      currentPage: 1
     };
     // values for display: 'loading', 'register', 'search', 'viewProfile'
   }
@@ -46,6 +48,11 @@ class App extends React.Component {
     this.setState({ currentProfile: user });
   };
 
+  handleClick = pageNumber => {
+    console.log("button clicked! " + pageNumber);
+    this.setState({ currentPage: pageNumber });
+  };
+
   renderInterface() {
     if (this.state.currentDisplay === "loading") {
       return <Welcome setCurrentDisplay={this.setCurrentDisplay} />;
@@ -67,10 +74,19 @@ class App extends React.Component {
       return (
         <div>
           <Header />
+          <Pagination
+            totalRecords={88}
+            recordsPerPage={10}
+            buttonsBeforeAfter={2}
+            handleClick={this.handleClick}
+            currentPage={this.state.currentPage}
+          />
           <Search
             data={this.state.data}
             setCurrentProfile={this.setCurrentProfile}
             setCurrentDisplay={this.setCurrentDisplay}
+            currentPage={this.state.currentPage}
+            recordsPerPage={10}
           />
         </div>
       );

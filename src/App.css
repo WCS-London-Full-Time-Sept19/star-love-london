@@ -94,3 +94,13 @@ label {
 span.jedi {
   font-family: "Star Jedi";
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination button {
+  margin: 2px;
+}

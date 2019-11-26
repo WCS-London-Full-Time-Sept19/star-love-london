@@ -70,6 +70,7 @@ class Search extends React.Component {
   };
 
   render() {
+    //console.log(list);
     return (
       <div className="container">
         <form className="form-inline my-2 my-lg-0">
